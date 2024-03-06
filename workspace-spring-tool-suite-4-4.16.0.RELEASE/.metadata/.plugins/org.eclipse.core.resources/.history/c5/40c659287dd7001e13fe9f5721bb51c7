@@ -1,0 +1,70 @@
+package com.cg.SpringBootJPA.SpringBootJPA.CRUD;
+
+import java.util.List;
+
+import jakarta.persistence.CascadeType;
+import jakarta.persistence.Entity;
+import jakarta.persistence.GeneratedValue;
+import jakarta.persistence.GenerationType;
+import jakarta.persistence.Id;
+import jakarta.persistence.JoinColumn;
+import jakarta.persistence.ManyToOne;
+import jakarta.persistence.OneToMany;
+import jakarta.persistence.Table;
+
+@Entity
+@Table(name="Orderstable")
+public class OrdersList {
+	@Id
+	@GeneratedValue(strategy = GenerationType.IDENTITY)
+	private int prodId;
+	@ManyToOne(cascade=CascadeType.ALL)
+	@JoinColumn(name="custId")
+	//private String prodname;
+	private int prodCost;
+	private CustomerDetails cust_det;
+	public int getProdId() {
+		return prodId;
+	}
+	public void setProdId(int prodId) {
+		this.prodId = prodId;
+//	}
+//	public String getProdname() {
+//		return prodname;
+//	}
+//	public void setProdname(String prodname) {
+//		this.prodname = prodname;
+//	}
+	public int getProdCost() {
+		return prodCost;
+	}
+	public void setProdCost(int prodCost) {
+		this.prodCost = prodCost;
+	}
+		
+	public CustomerDetails getCust_det() {
+		return cust_det;
+	}
+	public void setCust_det(CustomerDetails cust_det) {
+		this.cust_det = cust_det;
+	}
+	public OrdersList(int prodId,  int prodCost, CustomerDetails cust_det) {
+		
+		this.prodId = prodId;
+		//this.prodname = prodname;
+		this.prodCost = prodCost;
+		this.cust_det = cust_det;
+	}
+	public OrdersList() {
+		
+	}
+	@Override
+	public String toString() {
+		return "OrdersList [prodId=" + prodId +  ", prodCost=" + prodCost + ", cust_det="
+				+ cust_det + "]";
+	}
+	
+
+
+
+}

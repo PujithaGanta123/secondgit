@@ -1,0 +1,23 @@
+package javaPractice;
+
+public class TransactionParty {
+	String seller;
+	String buyer;
+	
+	public TransactionParty(String seller, String buyer) {
+		this.seller=seller;
+		this.buyer=buyer;
+	}
+	class  Receipt{
+		TransactionParty transactionParty;
+		String productsQR;
+		
+		public Receipt(TransactionParty transactionParty,String productsQR) {
+			this.transactionParty=transactionParty;
+			this.productsQR=productsQR;
+		}
+	}
+
+	
+
+}

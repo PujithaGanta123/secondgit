@@ -1,0 +1,51 @@
+package com.cg.SpringBootJPA.SpringBootJPA.CRUD;
+
+
+
+
+import java.util.List;
+
+import org.slf4j.Logger;
+import org.slf4j.LoggerFactory;
+import org.springframework.boot.CommandLineRunner;
+import org.springframework.stereotype.Component;
+
+
+public class CustomerOrdersCommandLinerunner implements CommandLineRunner{
+	private Logger logger=LoggerFactory.getLogger(getClass());
+	private CustomerRepository repo_cust;
+	private OrderRepository repo_order;
+	
+
+	public CustomerOrdersCommandLinerunner(CustomerRepository repo_cust, OrderRepository repo_order) {
+		
+		this.repo_cust = repo_cust;
+		this.repo_order = repo_order;
+	}
+	public CustomerOrdersCommandLinerunner() {
+		
+	}
+
+
+	@Override
+	public void run(String... args) throws Exception {
+		logger.info(args.toString());
+		//insert into customer
+		
+		CustomerDetails cust=new CustomerDetails(21,"puji","ongole");		
+		repo_cust.save(cust);
+		
+		//insert into Orders		
+		repo_order.save(new OrdersList(1,"mobile",25000,cust));
+		repo_order.save(new OrdersList(2,"laptop",75000,cust));		
+		//repo_cust.deleteById(21);
+		//repo_order.deleteById(2);
+		
+		//System.out.println(repo_cust.findByName("puji"));
+		//System.out.println(repo_order.findByName("mobile"));
+		
+		
+	}
+	
+
+}

@@ -1,0 +1,49 @@
+package om.cg.springRestAPI.springRestAPI.Surveyquestions;
+
+import java.util.List;
+
+public class Survey {
+	private int id;
+	private String title;
+	private String desc;
+	private List<Question> question ;
+	public int getId() {
+		return id;
+	}
+	public void setId(int id) {
+		this.id = id;
+	}
+	public String getTitle() {
+		return title;
+	}
+	public void setTitle(String title) {
+		this.title = title;
+	}
+	public String getDesc() {
+		return desc;
+	}
+	public void setDesc(String desc) {
+		this.desc = desc;
+	}
+	public List<Question> getQuestion() {
+		return question;
+	}
+	public void setQuestion(List<Question> question) {
+		this.question = question;
+	}
+	public Survey(int id, String title, String desc, List<Question> question) {
+		
+		this.id = id;
+		this.title = title;
+		this.desc = desc;
+		this.question = question;
+	}
+	public Survey() {
+		
+	}
+	@Override
+	public String toString() {
+		return "Survey [id=" + id + ", title=" + title + ", desc=" + desc + ", question=" + question + "]";
+	}
+
+}

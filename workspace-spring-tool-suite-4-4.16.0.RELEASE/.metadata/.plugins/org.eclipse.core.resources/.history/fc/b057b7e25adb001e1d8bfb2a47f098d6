@@ -1,0 +1,33 @@
+package com.controller;
+
+public class ErrorResponce {
+	private String message;
+	private String status;
+	private long timestamp;
+	public ErrorResponce(String message, String status, long time) {
+		this.message = message;
+		this.status = status;
+		this.timestamp =time;
+	}
+	public ErrorResponce() {
+	}
+	public String getMessage() {
+		return message;
+	}
+	public String getStatus() {
+		return status;
+	}
+	public long getTimestamp() {
+		return timestamp;
+	}
+	public void setMessage(String message) {
+		this.message = message;
+	}
+	public void setStatus(String notFound) {
+		this.status = notFound;
+	}
+	public void setTimestamp(long time) {
+		this.timestamp = time;
+	}
+
+}

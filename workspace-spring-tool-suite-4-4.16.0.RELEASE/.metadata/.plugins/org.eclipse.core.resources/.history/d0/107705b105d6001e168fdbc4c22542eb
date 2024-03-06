@@ -1,0 +1,108 @@
+package com.cg.springRestPrblms.springRestPrblms.Surveyquens;
+
+import java.util.ArrayList;
+import java.util.Arrays;
+import java.util.List;
+import java.util.Optional;
+import java.util.function.Predicate;
+
+import org.springframework.http.HttpStatus;
+import org.springframework.web.server.ResponseStatusException;
+
+public class SurveyService {
+	private static List<Survey> surveys=new ArrayList<>();
+	static
+	{
+		Question question1 = new Question(1,
+		        "Most Popular Cloud Platform Today", Arrays.asList(
+		                "AWS", "Azure", "Google Cloud", "Oracle Cloud"), "AWS");
+		Question question2 = new Question(2,
+		        "Fastest Growing Cloud Platform", Arrays.asList(
+		                "AWS", "Azure", "Google Cloud", "Oracle Cloud"), "Google Cloud");
+		Question question3 = new Question(3,
+		        "Most Popular DevOps Tool", Arrays.asList(
+		                "Kubernetes", "Docker", "Terraform", "Azure DevOps"), "Kubernetes");
+		List<Question> lq=new ArrayList<>(Arrays.asList(question1,question2,question3  ));
+		Survey survey1=new Survey(1,"Cloud","Devops",lq);
+		surveys.add(survey1);
+	}
+	//retrieve all surveys
+	public   List<Survey> retrieveAll()
+	{
+		return surveys;
+	}
+	//retrieve by ID
+	public Survey retrievebySurveyID(int surveyId)
+	{
+		Predicate<? super Survey> predicate =
+				survey->survey.getId()==(surveyId);
+		Optional<Survey> optionalsurvey=
+				surveys.stream().filter(predicate).findFirst();
+		if(optionalsurvey.isEmpty())
+			return null;
+		else
+			return optionalsurvey.get();
+
+	}
+	public List<Question> retreiveQuestion(int SurveyId)
+		{
+			return retrievebySurveyID(SurveyId).getQuestion();
+
+		}
+		//retrieve specific question
+		public Question retrievebyQuestionId(int SurveyId,int QuestionId)
+		{
+			List<Question> lq=retreiveQuestion(SurveyId);
+			Predicate<? super Question> predicate =
+					question->question.getId()==(QuestionId);
+			Optional<Question> optionalquestion=
+					lq.stream().filter(predicate).findFirst();
+			if(optionalquestion.isEmpty())
+				return null;
+			else
+				return optionalquestion.get();
+
+		}
+		public void addSurveyQuestion(int surveyId,Question que)
+		{		
+			List<Question>ques= retreiveQuestion(surveyId);
+			ques.add(que);
+
+		}
+		public String deleteSurveyQuestion(int SurveyId, int QuestionId)
+		{
+			List<Question> quest_list=retreiveQuestion(SurveyId);
+			 	
+			
+			if(quest_list==null)
+			{
+				throw new ResponseStatusException(HttpStatus.NOT_FOUND);
+				
+			}
+			
+			Question ques=retrievebyQuestionId(SurveyId,QuestionId);
+			quest_list.remove(ques);
+			
+			return QuestionId+" removed";
+			
+		}
+		public String updateSurveyQuestion(int SurveyId, int QuestionId,Question quest)
+		{
+			Question que = retrievebyQuestionId(SurveyId,QuestionId);
+			List<Question> que_list = retreiveQuestion(SurveyId);
+			int index = que_list.indexOf(que);
+			que_list.set(index, quest);
+			return QuestionId+"  updated";
+		}
+			
+			
+			
+		
+		
+}
+		
+		
+		
+		
+		
+		

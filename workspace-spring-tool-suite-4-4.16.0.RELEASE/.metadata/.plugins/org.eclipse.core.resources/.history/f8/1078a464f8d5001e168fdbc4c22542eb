@@ -1,0 +1,5 @@
+package com.cg.springRestPrblms.springRestPrblms.Surveyquens;
+
+public class SurvryNotfoundException {
+
+}

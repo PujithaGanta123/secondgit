@@ -1,0 +1,9 @@
+/**
+ * 
+ */
+/**
+ * @author gapujith
+ *
+ */
+module javalang {
+}

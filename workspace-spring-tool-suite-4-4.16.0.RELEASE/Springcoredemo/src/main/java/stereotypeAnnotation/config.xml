@@ -1,0 +1,50 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<beans xmlns="http://www.springframework.org/schema/beans"
+xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+xmlns:context="http://www.springframework.org/schema/context"
+xmlns:m="http://www.springframework.org/schema/p"
+
+xmlns:util="http://www.springframework.org/schema/util"
+xsi:schemaLocation="http://www.springframework.org/schema/beans
+http://www.springframework.org/schema/beans/spring-beans.xsd
+http://www.springframework.org/schema/context
+http://www.springframework.org/schema/context/spring-context.xsd
+http://www.springframework.org/schema/util
+http://www.springframework.org/schema/util/spring-util.xsd">
+
+
+<util:properties id="price">
+<prop key="Kitkat">40</prop>
+<prop key="mom's magic">90</prop>
+<prop key="vennila">50</prop>
+
+</util:properties>
+<context:component-scan base-package="stereotypeAnnotation"/>
+
+<bean class="stereotypeAnnotation.SnackItems" name="SnackItems">
+<property name="price">
+<ref bean="price" />
+</property>
+
+</bean>
+
+
+<bean class="stereotypeAnnotation.SuperMarket" name="SuperMarket" >
+<property name="si">
+<ref bean="SnackItems"/>
+</property></bean>
+<util:list list-class="java.util.LinkedList" id="item">
+   <value>chocolates</value>
+   <value>biscuts</value>
+   <value>ice creams</value>
+</util:list>
+
+<util:map map-class="java.util.HashMap" id="numoitems">
+<entry key="chocolate" value="10"/>
+<entry key="biscutes" value="15"/>
+<entry key="ice cream" value="4"/>
+</util:map>
+
+
+
+</beans>

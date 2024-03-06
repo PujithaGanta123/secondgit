@@ -1,0 +1,43 @@
+package om.cg.springRestAPI.springRestAPI.Surveyquestions;
+
+import java.time.LocalDateTime;
+
+import org.springframework.web.bind.annotation.RequestMapping;
+
+public class ErrorResponse {
+	private String message;
+	private String status;
+	private long timestamp;
+	public String getMessage() {
+		return message;
+	}
+	public void setMessage(String message) {
+		this.message = message;
+	}
+	public String getStatus() {
+		return status;
+	}
+	public void setStatus(String status) {
+		this.status = status;
+	}
+
+	public long getTimestamp() {
+		return timestamp;
+	}
+	public void setTimestamp(long timestamp) {
+		this.timestamp = timestamp;
+	}
+	
+
+
+	public ErrorResponse(String message, String status, long timestamp) {
+		super();
+		this.message = message;
+		this.status = status;
+		this.timestamp = timestamp;
+	}
+	public ErrorResponse() {
+		
+	}
+	
+}

@@ -1,0 +1,10 @@
+package com.cg.SpringBootJPA.SpringBootJPA.CRUD;
+
+import org.springframework.data.jpa.repository.JpaRepository;
+
+public interface OrderRepository extends JpaRepository<OrdersList,Integer>{
+	OrdersList findByName(String string);
+	OrdersList findById(int id);
+	void save(int id, String name, int price);
+
+}

@@ -1,0 +1,28 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<beans xmlns="http://www.springframework.org/schema/beans"
+xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+xmlns:context="http://www.springframework.org/schema/context"
+xmlns:m="http://www.springframework.org/schema/p"
+xsi:schemaLocation="http://www.springframework.org/schema/beans
+http://www.springframework.org/schema/beans/spring-beans.xsd
+http://www.springframework.org/schema/context
+http://www.springframework.org/schema/context/spring-context.xsd">
+<bean id="m" class="autowiringAnnotation.Mango" name="Mango">
+<constructor-arg name="num" value="20"/>
+</bean>
+<bean id="a" class="autowiringAnnotation.Apple" name="apple">
+<constructor-arg name="numoapp" value="30"/>
+</bean> 
+<bean id="b" class="autowiringAnnotation.Banana" name="Banana">
+<constructor-arg name="numob" value="40"/>
+</bean>
+<bean id="s" class="autowiringAnnotation.Strawberry" name="Strawberry">
+<constructor-arg name="numos" value="50"/>
+</bean>
+
+
+<bean id="f" class="autowiringAnnotation.Fruits" name="Fruits" autowire="constructor"/>
+<context:annotation-config/>
+
+
+</beans>

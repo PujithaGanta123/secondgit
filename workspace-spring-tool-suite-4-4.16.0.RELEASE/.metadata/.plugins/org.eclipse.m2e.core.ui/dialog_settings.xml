@@ -1,0 +1,77 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<section name="Workbench">
+	<section name="MavenProjectWizardLocationPage">
+		<list key="location">
+			<item value="C:\Users\GAPUJITH\Downloads\MockItdemo\MockItdemo"/>
+			<item value="C:\Users\GAPUJITH\Downloads\DAODemo\DAODemo\src\main\java\com\cg\DAODemo\DAODemo\Restaurant\RestaurantDAOImpl.java"/>
+			<item value="C:\Users\GAPUJITH\Downloads\springJPADemo\springJPADemo\pom.xml"/>
+			<item value="C:\Users\GAPUJITH\Downloads\SpringRestdemo\SpringRestdemo\src\main\java\com\cg\SpringRest\SpringRestdemo\Survey"/>
+			<item value="C:\Users\GAPUJITH\Documents\workspace-spring-tool-suite-4-4.16.0.RELEASE\SpringMVC\src\main\webapp\WEB-INF\web.xml"/>
+			<item value="C:\Users\GAPUJITH\Documents\workspace-spring-tool-suite-4-4.16.0.RELEASE\Springcoredemo\src\main\java\lifecycleInterface\StudentLogin.java"/>
+			<item value="C:\Users\GAPUJITH\Documents\workspace-spring-tool-suite-4-4.16.0.RELEASE\sql.jdbc\src\main\java\jpaManytoOne\CheckManytoOne.java"/>
+			<item value="C:\Users\GAPUJITH\Documents\workspace-spring-tool-suite-4-4.16.0.RELEASE\pujitha"/>
+			<item value="C:\Users\GAPUJITH\Documents\workspace-spring-tool-suite-4-4.16.0.RELEASE\javalang\src"/>
+		</list>
+		<list key="projectNameTemplate">
+			<item value="[artifactId]"/>
+			<item value="[artifactId]-TRUNK"/>
+			<item value="[artifactId]-[version]"/>
+			<item value="[groupId].[artifactId]"/>
+			<item value="[groupId].[artifactId]-[version]"/>
+			<item value="[name]"/>
+		</list>
+	</section>
+	<section name="MavenProjectWizardArchetypePage">
+		<item key="catalog" value="All Catalogs"/>
+		<list key="projectNameTemplate">
+			<item value="[artifactId]"/>
+			<item value="[artifactId]-TRUNK"/>
+			<item value="[artifactId]-[version]"/>
+			<item value="[groupId].[artifactId]"/>
+			<item value="[groupId].[artifactId]-[version]"/>
+			<item value="[name]"/>
+		</list>
+	</section>
+	<section name="Maven2ProjectWizardArchifactPage">
+		<list key="package">
+		</list>
+		<list key="groupId">
+		</list>
+		<list key="artifactId">
+		</list>
+		<list key="projectNameTemplate">
+			<item value="[artifactId]"/>
+			<item value="[artifactId]-TRUNK"/>
+			<item value="[artifactId]-[version]"/>
+			<item value="[groupId].[artifactId]"/>
+			<item value="[groupId].[artifactId]-[version]"/>
+			<item value="[name]"/>
+		</list>
+		<list key="version">
+			<item value="0.0.1-SNAPSHOT"/>
+		</list>
+	</section>
+	<section name="MavenProjectWizardArtifactPage">
+		<list key="groupId">
+		</list>
+		<list key="name">
+		</list>
+		<list key="artifactId">
+		</list>
+		<list key="projectNameTemplate">
+			<item value="[artifactId]"/>
+			<item value="[artifactId]-TRUNK"/>
+			<item value="[artifactId]-[version]"/>
+			<item value="[groupId].[artifactId]"/>
+			<item value="[groupId].[artifactId]-[version]"/>
+			<item value="[name]"/>
+		</list>
+		<list key="version">
+			<item value="0.0.1-SNAPSHOT"/>
+		</list>
+	</section>
+	<section name="org.eclipse.m2e.core.pom.overview">
+	</section>
+	<section name="org.eclipse.m2e.core.pom.dependencies">
+	</section>
+</section>

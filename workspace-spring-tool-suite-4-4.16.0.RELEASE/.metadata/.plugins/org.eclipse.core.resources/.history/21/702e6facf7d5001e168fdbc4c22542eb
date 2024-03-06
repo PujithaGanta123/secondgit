@@ -1,0 +1,52 @@
+package com.cg.springRestPrblms.springRestPrblms.Surveyquens;
+
+import java.time.LocalDateTime;
+
+import org.springframework.http.HttpStatus;
+import org.springframework.web.bind.annotation.RequestMapping;
+
+public class ErrorResponse {
+	String message;
+	HttpStatus status;
+	LocalDateTime timestamp;
+	public String getMessage() {
+		return message;
+	}
+	public void setMessage(String message) {
+		this.message = message;
+	}
+	public String getStatus() {
+		return status;
+	}
+	public void setStatus(HttpStatus notFound) {
+		this.status = notFound;
+	}
+
+	public LocalDateTime getTimestamp() {
+		return timestamp;
+	}
+	public void setTimestamp(LocalDateTime timestamp) {
+		this.timestamp = timestamp;
+	}
+	
+
+
+	public ErrorResponse(String message, HttpStatus status, LocalDateTime timestamp) {
+		super();
+		this.message = message;
+		this.status = status;
+		this.timestamp = timestamp;
+	}
+	
+
+	public ErrorResponse() {
+		super();
+	}
+	@RequestMapping("/errors")
+	public ErrorResponse  error()
+	{
+		return new ErrorResponse("question not available","404",LocalDateTime.now());
+	}
+	
+
+}
